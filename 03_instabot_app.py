@@ -9,14 +9,24 @@ from PIL import Image
 import urllib
 #구글 번역
 from googletrans import Translator
+#deepl 번역
+import deepl
 
 ##### 기능 구현 함수 #####
 # 영어로 번역
 def google_trans(messages):
-    google = Translator()
-    result = google.translate(messages, dest="en")
 
+    auth_key = "2b57234b-8daf-4de0-be30-3a6083ae2aa4:fx"  # Replace with your key
+    translator = deepl.Translator(auth_key)
+    result = translator.translate_text(messages, target_lang="en")
+    
     return result.text
+
+# def google_trans(messages):
+#     google = Translator()
+#     result = google.translate(messages, dest="en")
+
+#     return result.text
 
 # 인스타 업로드
 def uploadinstagram(description):
