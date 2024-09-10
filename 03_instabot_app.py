@@ -127,7 +127,7 @@ def main():
         if st.button(label='업로드'):
             image = Image.open("instaimg.jpg")
             image = image.convert("RGB")
-            new_image = image.resize((1080, 1080))
+            new_image = image.resize((512, 512))
             new_image.save("instaimg_resize.jpg")
             uploadinstagram(st.session_state["description"])
             st.session_state["flag"] = False
