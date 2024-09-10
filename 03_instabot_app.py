@@ -18,7 +18,7 @@ def google_trans(messages):
 
     auth_key = "2b57234b-8daf-4de0-be30-3a6083ae2aa4:fx"  # Replace with your key
     translator = deepl.Translator(auth_key)
-    result = translator.translate_text(messages, target_lang="en")
+    result = translator.translate_text(messages, target_lang="EN-US")
     
     return result.text
 
